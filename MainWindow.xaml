@@ -1,0 +1,112 @@
+﻿<Window x:Class="Курсова_робота.MainWindow"  KeyDown="KeyPress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курсова_робота"
+        mc:Ignorable="d"
+        Icon="Images\icon.ico"
+        WindowStartupLocation="CenterScreen"
+        Title="Куточки" Height="950" Width="1100">
+    <DockPanel LastChildFill="True">
+
+        <Grid DockPanel.Dock="Top" Height="50" Background="Aquamarine">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BackButton" Width="50" Background="Transparent" BorderThickness="0" Visibility="Hidden" Click="BackButton_Click">
+                <Image Source="Images\LeftArrow.png"></Image>
+            </Button>
+            <Button x:Name="NextButton" Grid.Column ="2" Width="50" Background="Transparent" BorderThickness="0" Visibility="Hidden" Click="NextButton_Click">
+                <Image Source="Images\RightArrow.png"></Image>
+            </Button>
+            <Label x:Name="Header" FontSize="24" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Content="ГОЛОВНЕ МЕНЮ" FontFamily="Verdana"></Label>
+        </Grid>
+
+        <local:Board x:Name="board" DockPanel.Dock="Bottom" Background="Khaki">
+            <local:Board.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </local:Board.ColumnDefinitions>
+            <local:Board.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </local:Board.RowDefinitions>
+
+            <Button x:Name ="StartButton" Grid.Column="2" Grid.Row="1" Content="Почати гру" FontSize="24" Grid.ColumnSpan="3" Click="StartButton_Click" Background="Coral" FontFamily="Verdana"></Button>
+            <Button x:Name="HelpButton" Grid.Row="3" Grid.Column="2" Content="Посібник користувача" FontSize="24" Grid.ColumnSpan="3" Click="HelpButton_Click" Background="Coral" FontFamily="Verdana"></Button>
+            <Button x:Name ="ExitButton" Grid.Column="2" Grid.Row="5" Content="Вихід" FontSize="24"  Grid.ColumnSpan="3" Click="ExitButton_Click" Background="Coral" FontFamily="Verdana"></Button>
+
+            <Button x:Name ="NewGameButton" Grid.Column="2" Grid.Row="3" Content="Нова гра" FontSize="24" Grid.ColumnSpan="3" Click="NewGameButton_Click" Visibility="Hidden" Background="Coral" FontFamily="Verdana"></Button>
+            <Button x:Name ="ContGameButton" Grid.Column="2" Grid.Row="1" Content="Продовжити" FontSize="24" Grid.ColumnSpan="3" Click="ContGameButton_Click" Visibility="Hidden" Background="Coral" FontFamily="Verdana"></Button>
+            <Label x:Name="HelpText" FontSize="24" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Visibility="Hidden">
+                <Image Source="Images\manual.jpg"></Image>
+            </Label>
+
+            <Button x:Name="b00" Visibility="Hidden" local:Board.Row="0" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b01" Visibility="Hidden" local:Board.Row="0" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b02" Visibility="Hidden" local:Board.Row="0" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b03" Visibility="Hidden" local:Board.Row="0" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b04" Visibility="Hidden" local:Board.Row="0" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b05" Visibility="Hidden" local:Board.Row="0" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b06" Visibility="Hidden" local:Board.Row="0" local:Board.Column="6" Click="Checker_Click"></Button>
+            <Button x:Name="b10" Visibility="Hidden" local:Board.Row="1" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b11" Visibility="Hidden" local:Board.Row="1" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b12" Visibility="Hidden" local:Board.Row="1" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b13" Visibility="Hidden" local:Board.Row="1" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b14" Visibility="Hidden" local:Board.Row="1" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b15" Visibility="Hidden" local:Board.Row="1" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b16" Visibility="Hidden" local:Board.Row="1" local:Board.Column="6" Click="Checker_Click"></Button>
+            <Button x:Name="b20" Visibility="Hidden" local:Board.Row="2" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b21" Visibility="Hidden" local:Board.Row="2" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b22" Visibility="Hidden" local:Board.Row="2" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b23" Visibility="Hidden" local:Board.Row="2" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b24" Visibility="Hidden" local:Board.Row="2" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b25" Visibility="Hidden" local:Board.Row="2" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b26" Visibility="Hidden" local:Board.Row="2" local:Board.Column="6" Click="Checker_Click"></Button>
+            <Button x:Name="b30" Visibility="Hidden" local:Board.Row="3" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b31" Visibility="Hidden" local:Board.Row="3" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b32" Visibility="Hidden" local:Board.Row="3" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b33" Visibility="Hidden" local:Board.Row="3" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b34" Visibility="Hidden" local:Board.Row="3" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b35" Visibility="Hidden" local:Board.Row="3" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b36" Visibility="Hidden" local:Board.Row="3" local:Board.Column="6" Click="Checker_Click"></Button>
+            <Button x:Name="b40" Visibility="Hidden" local:Board.Row="4" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b41" Visibility="Hidden" local:Board.Row="4" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b42" Visibility="Hidden" local:Board.Row="4" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b43" Visibility="Hidden" local:Board.Row="4" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b44" Visibility="Hidden" local:Board.Row="4" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b45" Visibility="Hidden" local:Board.Row="4" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b46" Visibility="Hidden" local:Board.Row="4" local:Board.Column="6" Click="Checker_Click"></Button>
+            <Button x:Name="b50" Visibility="Hidden" local:Board.Row="5" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b51" Visibility="Hidden" local:Board.Row="5" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b52" Visibility="Hidden" local:Board.Row="5" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b53" Visibility="Hidden" local:Board.Row="5" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b54" Visibility="Hidden" local:Board.Row="5" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b55" Visibility="Hidden" local:Board.Row="5" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b56" Visibility="Hidden" local:Board.Row="5" local:Board.Column="6" Click="Checker_Click"></Button>
+            <Button x:Name="b60" Visibility="Hidden" local:Board.Row="6" local:Board.Column="0" Click="Checker_Click"></Button>
+            <Button x:Name="b61" Visibility="Hidden" local:Board.Row="6" local:Board.Column="1" Click="Checker_Click"></Button>
+            <Button x:Name="b62" Visibility="Hidden" local:Board.Row="6" local:Board.Column="2" Click="Checker_Click"></Button>
+            <Button x:Name="b63" Visibility="Hidden" local:Board.Row="6" local:Board.Column="3" Click="Checker_Click"></Button>
+            <Button x:Name="b64" Visibility="Hidden" local:Board.Row="6" local:Board.Column="4" Click="Checker_Click"></Button>
+            <Button x:Name="b65" Visibility="Hidden" local:Board.Row="6" local:Board.Column="5" Click="Checker_Click"></Button>
+            <Button x:Name="b66" Visibility="Hidden" local:Board.Row="6" local:Board.Column="6" Click="Checker_Click"></Button>
+        </local:Board>
+    </DockPanel>
+</Window>

@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Курсова_робота</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <Win32Resource></Win32Resource>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Black.png" />
+    <None Remove="icon.ico" />
+    <None Remove="Images\manual.jpg" />
+    <None Remove="Images\RightArrow.png" />
+    <None Remove="LeftArrow.png" />
+    <None Remove="Sounds\CheckerSound1.mp3" />
+    <None Remove="Sounds\CheckerSound2.mp3" />
+    <None Remove="Sounds\CheckerSound3.mp3" />
+    <None Remove="Sounds\CheckerSound4.mp3" />
+    <None Remove="Sounds\WinSound.mp3" />
+    <None Remove="White.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\Black.png" />
+    <Resource Include="Images\LeftArrow.png" />
+    <Resource Include="Images\manual.jpg" />
+    <Resource Include="Images\RightArrow.png" />
+    <Resource Include="Images\White.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net5.0-windows\ref\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
